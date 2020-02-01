@@ -24,10 +24,12 @@ $("#searchBtn").on("click", function() {
         var byLine = $("<h3>").text(result.docs[i].byline.original);
         var sectionText = $("<h3>").text("Section: " + result.docs[i].section_name);
         var pubDate = $("<h3>").text(result.docs[i].pub_date);
-        var link = $("<p>").text(result.docs[i].web_url);
+        var link = $("<p>")
+        var linkEle =$("<a>").attr("href", result.docs[i].web_url).text(result.docs[i].web_url);
+        link.append(linkEle);
         cardBodyDiv.append(byLine, sectionText, pubDate, link);
         //Adding the images into the document
-        $("#topArticles").append(cardBodyDiv, cardHeader, cardDiv);
+        $("#topArticles").append(cardHeader, cardBodyDiv, cardDiv);
     }
             
     });
