@@ -16,6 +16,7 @@ $("#searchBtn").on("click", function() {
       //settting the var response into a variable
       var result = res.response;
       var articleCount =parseInt($("#count").val());
+      $("#topArticles").empty();
     
     for(var i=0; i < articleCount ; i++) {
         var cardDiv = $("<div>").attr("class","card");
